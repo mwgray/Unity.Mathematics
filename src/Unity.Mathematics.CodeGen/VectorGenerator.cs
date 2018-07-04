@@ -359,6 +359,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.Append("* array = &x) { array[index] = value; }\n");
             str.AppendLine("\t\t\t}");
             str.AppendLine("\t\t}");
+            str.AppendFormat("\t\tpublic int Count => {0};\n", count);
 
         }
 

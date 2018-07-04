@@ -185,6 +185,7 @@ namespace Unity.Mathematics
                 fixed (float* array = &x) { array[index] = value; }
             }
         }
+        public int Count => 4;
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public float4 xxxx
         {

@@ -79,6 +79,7 @@ namespace Unity.Mathematics
                 fixed (bool* array = &x) { array[index] = value; }
             }
         }
+        public int Count => 3;
 
         // operator &
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
