@@ -18,13 +18,13 @@ namespace Unity.Mathematics.Mathematics.CodeGen
 
             // to `src/`, so 3 directories
 
-            var parent = directory.Parent?.Parent?.Parent;
+            var parent = directory.Parent?.Parent?.Parent?.Parent?.Parent?.Parent;
             if (parent == null)
             {
                 throw new InvalidOperationException($"Unable to get path of current assembly from `{typeof(MainClass).Assembly.Location}`");
             }
 
-            directory = new DirectoryInfo(Path.Combine(parent.FullName, "Unity.Mathematics"));
+            directory = new DirectoryInfo(Path.Combine(parent.FullName, "Assets", "GrayMatter", "Source", "Mathematics", "Fixed"));
             if (!directory.Exists)
             {
                 throw new InvalidOperationException($"The directory `{directory.FullName}` must exist");

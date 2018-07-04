@@ -19,6 +19,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             All = Arithmetic | Shifts | BitwiseLogic | BitwiseComplement | UnaryNegation
         }
 
+        static readonly string[] fixedTypes = { "Fix64", "fixed2", "fixed3", "fixed4" };
         static readonly string[] floatTypes = { "float", "float2", "float3", "float4" };
         static readonly string[] intTypes = { "int", "int2", "int3", "int4" };
         static readonly string[] uintTypes = { "uint", "uint2", "uint3", "uint4" };
@@ -35,10 +36,11 @@ namespace Unity.Mathematics.Mathematics.CodeGen
 
         private static readonly GeneratorJob[] s_Jobs = new[]
         {
-            new GeneratorJob { indexOperatorReturnType = "float", typeNames = floatTypes, features = Features.Arithmetic | Features.UnaryNegation },
-            new GeneratorJob { indexOperatorReturnType = "int", typeNames = intTypes, features = Features.All },
-            new GeneratorJob { indexOperatorReturnType = "uint", typeNames = uintTypes, features = Features.All & ~Features.UnaryNegation },
-            new GeneratorJob { indexOperatorReturnType = "bool", typeNames = boolTypes, features = Features.BitwiseLogic },
+            new GeneratorJob { indexOperatorReturnType = "Fix64", typeNames = fixedTypes, features = Features.Arithmetic | Features.UnaryNegation },
+//            new GeneratorJob { indexOperatorReturnType = "float", typeNames = floatTypes, features = Features.Arithmetic | Features.UnaryNegation },
+//            new GeneratorJob { indexOperatorReturnType = "int", typeNames = intTypes, features = Features.All },
+//            new GeneratorJob { indexOperatorReturnType = "uint", typeNames = uintTypes, features = Features.All & ~Features.UnaryNegation },
+//            new GeneratorJob { indexOperatorReturnType = "bool", typeNames = boolTypes, features = Features.BitwiseLogic },
         };
 
         private VectorGenerator(GeneratorJob job)
